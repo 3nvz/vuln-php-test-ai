@@ -19,6 +19,7 @@ switch ($path) {
     echo "<li><a href='/cmd?host=127.0.0.1'>Command injection</a></li>";
     echo "<li><a href='/upload'>Arbitrary upload + include</a></li>";
     echo "<li><a href='/ssrf?url=http://example.com'>SSRF-like fetch</a></li>";
+    echo "<li><a href='/deserialize?data='>PHP Object Injection</a></li>";
     echo "</ul>";
     break;
 
@@ -44,6 +45,10 @@ switch ($path) {
 
   case '/ssrf':
     require __DIR__ . '/../src/routes/ssrf.php';
+    break;
+
+  case '/deserialize':
+    require __DIR__ . '/../src/routes/deserialize.php';
     break;
 
   default:
