@@ -1,0 +1,2 @@
+Hello from notes.txt
+Try name=../public/index.php to test traversal.
