@@ -20,6 +20,7 @@ switch ($path) {
     echo "<li><a href='/upload'>Arbitrary upload + include</a></li>";
     echo "<li><a href='/ssrf?url=http://example.com'>SSRF-like fetch</a></li>";
     echo "<li><a href='/deserialize?data='>PHP Object Injection</a></li>";
+    echo "<li><a href='/deserialize-cmd?data='>PHP Object Injection (RCE)</a></li>";
     echo "</ul>";
     break;
 
@@ -50,6 +51,11 @@ switch ($path) {
   case '/deserialize':
     require __DIR__ . '/../src/routes/deserialize.php';
     break;
+
+  case '/deserialize-cmd':
+    require __DIR__ . '/../src/routes/deserialize_cmd.php';
+    break;
+
 
   default:
     http_response_code(404);
